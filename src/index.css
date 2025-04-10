@@ -76,7 +76,7 @@ button {
 
 .homeIcon {
   position: absolute;
-  top: 2svh;
+  top: 15svh;
   right: 2svh;
   color: var(--themeColor1);
   font-size: 5svh;
