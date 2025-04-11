@@ -1,10 +1,11 @@
 .CameraPage {
   /* border: 1px solid orange; */
+  overflow: hidden;
   height: calc(100svh - 20svh);
-  gap: 9svh;
+  gap: 5svh;
   justify-content: flex-start !important;
   .main {
-    width: 50svh;
+    width: 30svh;
     .webcamParent {
       border: 0.4svh solid var(--themeColor1);
       width: 100%;
@@ -48,7 +49,7 @@
 @media all and (max-width: 480px) {
   .CameraPage {
     .main {
-      width: 40svh;
+      width: 30svh;
     }
   }
 }
