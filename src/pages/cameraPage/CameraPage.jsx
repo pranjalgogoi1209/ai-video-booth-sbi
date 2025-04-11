@@ -64,6 +64,24 @@ export default function CameraPage({ setCapturedVideo }) {
       facingMode: "user",
     },
   };
+
+  const tabletVideoConstraints = {
+    width: isMobile ? { min: 720, max: 720 } : { min: 480, max: 480 },
+    height: isMobile ? { min: 480, max: 480 } : { min: 720, max: 720 },
+    aspectRatio:  480/ 720,
+    facingMode: "user",
+  };
+  
+  const forTabletConstraints = {
+    audio:false,
+    video: {
+      width: isMobile ? { min: 720, max: 720 } : { min: 720, max: 720 },
+      height: isMobile ? { min: 480, max: 480 } : { min: 480, max: 480 },
+      facingMode: "user",
+    },
+  }
+
+
   /* navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
     const track = stream.getVideoTracks()[0];
     console.log("Supported settings:", track.getCapabilities());
@@ -114,7 +132,7 @@ export default function CameraPage({ setCapturedVideo }) {
     //     toast.error(`Camera error: ${err.name} - ${err.message}`, toastOptions);
     //   });
     navigator.mediaDevices
-      .getUserMedia(constraints)
+      .getUserMedia(forTabletConstraints)
       .then((stream) => {
         const mimeType = MediaRecorder.isTypeSupported("video/mp4")
           ? "video/mp4"
@@ -195,7 +213,7 @@ export default function CameraPage({ setCapturedVideo }) {
               onResize={onVideoLoad}
               id={styles.webcam}
               forceScreenshotSourceSize={true}
-              videoConstraints={videoConstraints}
+              videoConstraints={tabletVideoConstraints}
               mirrored={true}
             />
           )}
