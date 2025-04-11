@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
 import { IoMdHome } from "react-icons/io";
 
 import Header from "./components/header/Header";
